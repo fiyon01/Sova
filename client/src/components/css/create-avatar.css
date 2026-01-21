@@ -1,0 +1,17 @@
+.image-div {
+    border: 1px solid #E6E2DC;
+    animation: image-pulse 2s infinite;
+}
+
+@keyframes image-pulse {
+    0% {
+        border-color: #6C8E80;
+    }
+    50% {
+        border-color: #E6E2DC;
+    }
+    100% {
+        border-color: #6C8E80;
+    }
+}
+

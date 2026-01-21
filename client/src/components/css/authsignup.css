@@ -1,0 +1,46 @@
+/* animate border */
+.left-div {
+    border: 2px solid rgba(108, 142, 128, 0.25);
+    animation: animateBorder 2s infinite;
+}
+.right-div {
+    border: 1px solid rgba(108, 142, 128, 0.25);
+    animation: animateBorder 2s infinite;
+}
+.left-div h1,.right h1 {
+    font-family: 'DM Serif Display', sans-serif;
+     font-size: 32px;
+    font-weight: 200;
+    line-height: 40px;
+    letter-spacing: 0em;
+}
+.left-div p,.right-p {
+     font-family: 'Inter', sans-serif;
+     font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+.left-div ul li {
+    font-family: 'Inter', sans-serif;
+     font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+}
+.signup-divider {
+    border: 1px solid #6C8E80;
+    animation: animateBorder 2s infinite;
+}
+
+@keyframes animateBorder {
+    0% {
+        border-color: #6C8E80;
+    }
+    50% {
+        border-color: #E6E2DC;
+    }
+    100% {
+        border-color: #6C8E80;
+    }
+}

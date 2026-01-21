@@ -1,0 +1,56 @@
+.voices h1{
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#1C1C1C;
+}
+.voices p{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#727C88;
+    margin-top: 2px;
+}
+.voices ul li{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#727C88;
+}
+
+.voices .voices-item{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#727C88;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.voices .voices-item:hover{
+    background-color: #eee1d1;
+    color:#727C88;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.voices-container{
+    background-color: #f8faf2;
+    border-radius: 20px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+

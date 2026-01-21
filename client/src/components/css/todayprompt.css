@@ -1,0 +1,65 @@
+.today-prompt{
+    border-radius: 20px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+.today-prompt-container h1{
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color:#1C1C1C;
+}
+
+
+
+.today-prompt p{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#727C88;
+}
+
+.today-prompt .buttons button{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#1C1C1C;
+    cursor: pointer;
+}
+
+.today-prompt .buttons button:hover{
+    background-color: #6C8E80;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.today-prompt .buttons button:active{
+    background-color: #6C8E80;
+    color:#727C88;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.today-prompt .buttons button:focus{
+    background-color: #7FA99B;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.today-prompt .buttons button:disabled{
+    background-color: #6C8E80;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}

@@ -1,0 +1,66 @@
+
+
+
+.daily-checkin{
+   
+    border-radius: 20px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+.daily-checkin-container h1{
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing:em;
+    text-align: left;
+    color:#1a1919;
+}
+.daily-checkin-container p{
+    color:#727C88;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.daily-checkin .buttons button {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#1C1C1C;
+cursor: pointer;
+}
+
+.daily-checkin .buttons button:hover{
+    background-color: #6C8E80;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.daily-checkin .buttons button:active{
+    background-color: #6C8E80;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.daily-checkin .buttons button:focus{
+    background-color: #6C8E80;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+.daily-checkin .buttons button:disabled{
+    background-color: #6C8E80;
+    color:#ffffff;
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}

@@ -1,2 +1,36 @@
 
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'DM Serif Display';
+    src: url('/fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+/* scrollbar-width: none;
+::-webkit-scrollbar {
+    display: none;
+} */
+
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E6E2DC;
+    border-radius: 10px;
+    border: 1px solid #E6E2DC;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 2px !important;
+}
+

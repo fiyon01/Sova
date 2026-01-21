@@ -1,0 +1,32 @@
+.items{
+    background-color: #f8faf2;
+    border-radius: 20px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+
+.circles-container{
+    background-color: #f8faf2;
+    border-radius: 20px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+.circles-container .header h1{
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#1C1C1C;
+}
+.circles-container .header p{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#727C88;
+    margin-top: 2px;
+}
