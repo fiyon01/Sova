@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import DailyCheckin from '../components/DailyCheckin'
 import TodayPrompt from '../components/TodayPrompt'
@@ -14,9 +14,19 @@ import { io } from "socket.io-client";
 
 const Home = () => {
     const [reactions, setReactions] = useState([]);
+    const [isOpen,setIsOpen] = useState(false);
+    const {isNewUser} = useLocation().state || {isNewUser:false};
+    
 
-
+    // FIX: Use useEffect to trigger the modal once on mount
     useEffect(() => {
+        if (isNewUser) {
+            setIsOpen(true);
+        }
+    }, [isNewUser]); // Only runs when isNewUser changes
+    
+    useEffect(() => {
+       
         const socket = io("http://192.168.100.2:3000");
 
 
@@ -110,7 +120,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <AvatarModal/>
+      <AvatarModal isOpen={isOpen} setIsOpen={setIsOpen}/>
     </div>
   )
 }
