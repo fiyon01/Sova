@@ -110,7 +110,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <AvatarModal/>
     </div>
   )
 }

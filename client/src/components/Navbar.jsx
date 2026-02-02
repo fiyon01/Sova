@@ -14,7 +14,7 @@ const Navbar = () => {
                 <li className='flex items-center gap-2'><LuMessageCircle/><Link to="/voices">Voices</Link></li>
                 <li className='flex items-center gap-2'><LuCircleDot/>Circles</li>
                 <li className='flex items-center gap-2'><LuShield/>My Space</li>
-                <li className='flex items-center gap-2'><LuUser/>Profile</li>
+                <li className='flex items-center gap-2'><LuUser/><Link to="/profile">Profile</Link></li>
                 
             </ul>
             </nav>

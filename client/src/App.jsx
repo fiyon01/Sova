@@ -8,6 +8,7 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Signup from "./pages/auth/Signup";
 import AuthSignup from "./pages/auth/AuthSignup";
+import Profile from "./pages/profile";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route element={<SystemLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/voices" element={<Voices />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
