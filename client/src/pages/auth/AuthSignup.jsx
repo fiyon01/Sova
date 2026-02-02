@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { LuSlidersHorizontal, LuEyeOff, LuHeartOff } from 'react-icons/lu'
-import { FaGoogle, FaFacebook, FaGithub, FaEye } from 'react-icons/fa'
-import "../../components/css/authsignup.css"
+import { LuSlidersHorizontal,LuEyeOff,LuHeartOff } from 'react-icons/lu'
+import { FaGoogle, FaFacebook, FaGithub,FaEye } from 'react-icons/fa'
+import  "../../components/css/authsignup.css"
 import axios from "axios"
+import { toast } from 'react-toastify'
 
 const stepsConfig = [
   { id: 1, label: "Begin" },
@@ -12,13 +13,13 @@ const stepsConfig = [
 ];
 
 const AuthSignup = () => {
-  const [step, setStep] = useState(1);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedOption2, setSelectedOption2] = useState(null);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
+    const [step, setStep] = useState(1);
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption2, setSelectedOption2] = useState(null);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [avatar, setAvatar] = useState("");
 
   const nextStep = () => { if (step < 4) setStep(step + 1); };
   const prevStep = () => { if (step > 1) setStep(step - 1); };
@@ -38,14 +39,23 @@ const AuthSignup = () => {
     4: "Enter your space",
   };
 
-  const handleSignup = async () => {
+  const handleSignup = async() => {
+    console.log("Signup")
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", {
-        email, password, name, avatar, selectedOption, selectedOption2
-      });
+
+        const response = await axios.post("http://localhost:5000/api/auth/signup", {
+            email,
+            password,
+            name,
+            avatar,
+            selectedOption,
+            selectedOption2
+        })
+      
     } catch (error) {
-      console.error(error);
+      
     }
+    
   }
 
   return (
@@ -116,36 +126,32 @@ const AuthSignup = () => {
             Step {step} of 4 — {stepDescription[step]}
           </p>
 
-          {/* STEP CONTENT */}
-          <div className="w-full">
-            {step === 1 && (
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm mb-1 text-[#1C1C1C]">Email</label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-[#E6E2DC] rounded-lg focus:ring-2 focus:ring-[#6C8E80] outline-none bg-white"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm mb-1 text-[#1C1C1C]">Password</label>
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-3 py-2 border border-[#E6E2DC] rounded-lg focus:ring-2 focus:ring-[#6C8E80] outline-none bg-white"
-                  />
-                </div>
-                
-                <button
-                  type="button"
-                  onClick={nextStep}
-                  className="w-full bg-[#6C8E80] text-white py-3 rounded-lg hover:bg-[#5C7D70] transition font-medium"
-                >
-                  {buttonText[step]}
-                </button>
+      {/* STEP CONTENT */}
+      {step === 1 && (
+        <form className="space-y-4">
+          <div>
+            <label className="block text-sm mb-1">Email</label>
+            <input
+              type="email"
+              className="w-full px-3 py-2 border border-[#E6E2DC] rounded-md focus:ring-2 focus:ring-[#6C8E80] outline-none"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm mb-1">Password</label>
+            <input
+              type="password"
+              className="w-full px-3 py-2 border border-[#E6E2DC] rounded-md focus:ring-2 focus:ring-[#6C8E80] outline-none"
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={nextStep}
+            className="w-full bg-[#6C8E80] text-white py-2 rounded-md hover:bg-[#5C7D70] transition"
+          >
+            {buttonText[step]}
+          </button>
 
                 <div className="relative py-4">
                   <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-[#E6E2DC] right-div"></span></div>
@@ -163,27 +169,25 @@ const AuthSignup = () => {
               </div>
             )}
 
-            {step === 2 && (
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm mb-1 text-[#1C1C1C]">Username</label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="How should we call you?"
-                    className="w-full px-3 py-2 border border-[#E6E2DC] rounded-lg focus:ring-2 focus:ring-[#6C8E80] outline-none bg-white"
-                  />
-                </div>
-                <button
-                  type="button"
-                  onClick={nextStep}
-                  className="w-full bg-[#6C8E80] text-white py-3 rounded-lg hover:bg-[#5C7D70] transition"
-                >
-                  {buttonText[step]}
-                </button>
-              </div>
-            )}
+      {step === 2 && (
+        <form className="space-y-4">
+          <div>
+            <label className="block text-sm mb-1">Username</label>
+            <input
+              type="text"
+              className="w-full px-3 py-2 border border-[#E6E2DC] rounded-md focus:ring-2 focus:ring-[#6C8E80] outline-none"
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={nextStep}
+            className="w-full bg-[#6C8E80] text-white py-2 rounded-md hover:bg-[#5C7D70]"
+          >
+            {buttonText[step]}
+          </button>
+        </form>
+      )}
 
             {step === 3 && (
               <div className="space-y-6">

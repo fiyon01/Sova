@@ -11,16 +11,12 @@ const userPreferencesSchema = new mongoose.Schema({
         enum: ["public", "anonymous", "private", "friends"],
         default: "anonymous"
     },
-    likesEnabled: {
-        type: Boolean,
-        default: false
-    },
     responseType: {
         type: String,
         enum: ["support only","allow responses", "no responses"],
         default: "support only"
     },
-    
+
     
 })
 

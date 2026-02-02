@@ -31,7 +31,7 @@ const stepKeyMap = [
   "hairstyle", "hairColor", "facialHair", "eyes", "eyebrows", "skinColor", "clothes", "accessories", "avatarStyle"
 ];
 
-const AvatarModal = ({ onClose, onSave }) => {
+const AvatarModal = ({ isOpen,setIsOpen,onClose, onSave }) => {
   const [step, setStep] = useState(0);
   const [hasSelected, setHasSelected] = useState(false);
 
@@ -78,7 +78,13 @@ const AvatarModal = ({ onClose, onSave }) => {
   const currentKey = stepKeyMap[step];
   const currentOptions = avatarOptions[currentKey] || [];
 
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
+    <>
+    {isOpen && (
     <div className="fixed inset-0 bg-gray-900/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
       {/* LAYOUT FIX: 
          1. max-h-[90vh] ensures it fits on screen.
@@ -109,7 +115,7 @@ const AvatarModal = ({ onClose, onSave }) => {
           {/* Header (Fixed Height) */}
           <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-white flex-shrink-0">
             <h2 className="text-lg font-bold text-gray-700">{steps[step]}</h2>
-            <button onClick={onClose} className="text-gray-400 hover:text-red-500 transition p-2">
+            <button onClick={handleClose} className="text-gray-400 hover:text-red-500 transition p-2">
               <FaTimes size={20} />
             </button>
           </div>
@@ -218,6 +224,8 @@ const AvatarModal = ({ onClose, onSave }) => {
         </div>
       </div>
     </div>
+    )}
+    </>
   );
 };
 
